@@ -5,7 +5,7 @@ const createTodo= async(todoData)=> {
 }
 
 const getAllTodo= async()=> {
-    return await Todo.find();
+    return await Todo.find({ userId });
 }
 const deleteTodo= async(id)=> {
     return await Todo.findByIdAndDelete(id);
