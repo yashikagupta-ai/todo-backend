@@ -1,13 +1,7 @@
 import Todo from "../models/todoModel.js";
 
-const createTodo= async(todoData)=> {
-    return await Todo.create(todoData);
-}
+const createTodo = async (todoData) => await Todo.create(todoData);
+const getAllTodo = async (userId) => await Todo.find({ userId });
+const deleteTodo = async (id) => await Todo.findByIdAndDelete(id);
 
-const getAllTodo= async()=> {
-    return await Todo.find();
-}
-const deleteTodo= async(id)=> {
-    return await Todo.findByIdAndDelete(id);
-}
-export {createTodo, getAllTodo, deleteTodo}
+export { createTodo, getAllTodo, deleteTodo };
